@@ -1,0 +1,32 @@
+buildscript {
+	apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+apply plugin: 'org.anarres.stdproject'
+stdproject {
+}
+
+group = "org.anarres.mirrors.heronarts"
+
+apply plugin: 'org.anarres.stdmodule'
+stdmodule {
+	description "Easy audio library for Processing."
+	author id: 'ddf', name: 'Damien Di Fede', email: 'ddf@compartmental.net'
+	author id: 'shevek', name: 'Shevek', email: 'github@anarres.org'
+	license 'LGPL-3.0'
+}
+
+dependencies {
+	// compile 'com.google.code.gson:gson:2.6.2'
+	compile 'com.googlecode.soundlibs:tritonus-share:0.3.7-2'
+	compile 'com.googlecode.soundlibs:mp3spi:1.9.5-1'
+	// compile 'javazoom:jlayer:1.0.1'
+}
+
+sourceCompatibility = 1.7
+animalsniffer {
+	signature = "org.codehaus.mojo.signature:java17:+@signature"
+	skip = true
+}
+
+sourceSets.main.java.srcDirs = [ 'src' ];

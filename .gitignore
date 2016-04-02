@@ -9,3 +9,6 @@ release/
 *.swp
 .DS_Store
 
+/.nb-gradle/
+/.gradle/
+/build/
